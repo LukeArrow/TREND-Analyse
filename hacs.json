@@ -1,5 +1,6 @@
 {
   "name": "Trend Analysis Card",
+  "content_in_root": false,
   "render_readme": true,
   "filename": "trend-analysis-card.js",
   "documentation": "https://github.com/LukeArrow/TREND-Analyse#readme"
