@@ -13,9 +13,7 @@
     "end": "BİTİŞ",
     "increase": "ARTIŞ",
     "decrease": "DÜŞÜŞ",
-    "total_increase": "TOPLAM ARTIŞ",
-    "total_decrease": "TOPLAM DÜŞÜŞ",
-    "delta": "NET DEĞİŞİM",
+    "delta": "DEĞİŞİM",
     "graph_title": "TREND GRAFİĞİ"
   },
   "error": {

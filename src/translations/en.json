@@ -13,9 +13,7 @@
     "end": "END",
     "increase": "INCREASE",
     "decrease": "DECREASE",
-    "total_increase": "TOTAL INCREASE",
-    "total_decrease": "TOTAL DECREASE",
-    "delta": "NET CHANGE",
+    "delta": "CHANGE",
     "graph_title": "TREND GRAPH"
   },
   "error": {

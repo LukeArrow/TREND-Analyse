@@ -317,27 +317,27 @@ export class TrendAnalysisCard extends LitElement {
         const percentageOnly = this._config.percentageOnly === true;
 
         const data = this._result;
-        const trend = data.trend;
-        const trendLabel = trend === 'down' ? localize('common.decrease') : trend === 'up' ? localize('common.increase') : '';
-        const trendIcon = trend === 'down' ? 'mdi:trending-down' : trend === 'up' ? 'mdi:trending-up' : 'mdi:trending-neutral';
-        const sign = data.delta > 0 ? '+' : '';
+        const trendLabel = data.trend === 'down' ? localize('common.decrease') : data.trend === 'up' ? localize('common.increase') : '';
 
         return html`
-            <div class="net-change-card ${trend}">
-                <div class="net-change-header">
-                    <span class="net-change-label">${localize('common.delta')}</span>
-                    <span class="net-change-trend ${trend}">
-                        <ha-icon icon="${trendIcon}"></ha-icon>
-                        ${trendLabel}
-                    </span>
+            <div class="net-change ${data.trend}">
+                <div class="trend-indicator ${data.trend}">
+                    <span class="trend-label">${localize('common.delta')}</span>
+                    ${data.trend === 'down' ? html`
+                        <ha-icon icon="mdi:trending-down"></ha-icon>
+                        <span class="trend-label ${data.trend}">${trendLabel}</span>
+                    ` : data.trend === 'up' ? html`
+                        <ha-icon icon="mdi:trending-up"></ha-icon>
+                        <span class="trend-label ${data.trend}">${trendLabel}</span>
+                    ` : undefined}
                 </div>
-                <div class="net-change-value-container">
+                <div class="value-container">
                     ${!percentageOnly ? html`
-                        <span class="net-change-value ${trend}">${sign}${data.delta.toFixed(2)}</span>
-                        <span class="net-change-unit">${unit}</span>
+                        <span class="main-value ${data.trend}">${data.delta.toFixed(2)}</span>
+                        <span class="unit">${unit}</span>
                     ` : nothing}
                     ${showPercentage ? html`
-                        <span class="net-change-percentage ${trend}">${data.deltaPercent !== undefined ? (data.deltaPercent > 0 ? '+' : '') + data.deltaPercent.toFixed(1) : '0.0'}%</span>
+                        <span class="percentage ${data.trend}">${data.deltaPercent?.toFixed(2)}%</span>
                     ` : nothing}
                 </div>
             </div>
