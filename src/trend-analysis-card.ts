@@ -318,6 +318,8 @@ export class TrendAnalysisCard extends LitElement {
 
         const data = this._result;
         const trendLabel = data.trend === 'down' ? localize('common.decrease') : data.trend === 'up' ? localize('common.increase') : '';
+        const deltaValue = `${data.delta > 0 ? '+' : ''}${data.delta.toFixed(2)}`;
+        const deltaPercentValue = data.deltaPercent ?? 0;
 
         return html`
             <div class="net-change ${data.trend}">
@@ -333,11 +335,11 @@ export class TrendAnalysisCard extends LitElement {
                 </div>
                 <div class="value-container">
                     ${!percentageOnly ? html`
-                        <span class="main-value ${data.trend}">${data.delta.toFixed(2)}</span>
+                        <span class="main-value ${data.trend}">${deltaValue}</span>
                         <span class="unit">${unit}</span>
                     ` : nothing}
                     ${showPercentage ? html`
-                        <span class="percentage ${data.trend}">${data.deltaPercent?.toFixed(2)}%</span>
+                        <span class="percentage ${data.trend}">${deltaPercentValue > 0 ? '+' : ''}${deltaPercentValue.toFixed(1)}%</span>
                     ` : nothing}
                 </div>
             </div>
