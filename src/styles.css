@@ -140,80 +140,6 @@
     padding: 24px;
 }
 
-.trend-indicator {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-
-.trend-indicator ha-icon {
-    --mdc-icon-size: 24px;
-}
-
-.trend-indicator.up ha-icon,
-.trend-label.up,
-.main-value.up {
-    color: var(--trend-increase-light);
-}
-
-.trend-indicator.down ha-icon,
-.trend-label.down,
-.main-value.down {
-    color: var(--trend-decrease-light);
-}
-
-.trend-indicator.neutral ha-icon,
-.trend-label.neutral,
-.main-value.neutral {
-    color: var(--trend-neutral);
-}
-
-.trend-label {
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-}
-
-.value-container {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 4px;
-}
-
-.main-value {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-}
-
-.unit {
-    font-size: 20px;
-    color: var(--trend-text-primary);
-    font-weight: 500;
-}
-
-.percentage {
-    font-size: 28px;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-}
-
-.percentage.up {
-    color: var(--trend-increase-light);
-}
-
-.percentage.down {
-    color: var(--trend-decrease-light);
-}
-
-.percentage.neutral {
-    color: var(--trend-neutral);
-}
-
 .stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -638,14 +564,6 @@
         font-size: 18px;
     }
 
-    .main-value {
-        font-size: 48px;
-    }
-
-    .unit {
-        font-size: 18px;
-    }
-
     .stats-grid {
         gap: 12px;
     }
@@ -656,10 +574,6 @@
 
     .stat-value {
         font-size: 24px;
-    }
-
-    .percentage {
-        font-size: 28px;
     }
 
     .stat-percentage {
