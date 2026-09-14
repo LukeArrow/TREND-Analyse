@@ -1,5 +1,7 @@
 # Trend Analysis Card for Home Assistant
 
+> **Hinweis:** Dies ist ein persönlicher **Fork** des Original-Repositories [Riscue/trend-analysis-card](https://github.com/Riscue/trend-analysis-card). In diesem Fork wurde die Netto-Änderungs-Summe entfernt, die Trendfarben wurden auf **fallend = grün** und **steigend = rot** getauscht, und es werden nur noch Gesamtzunahme und Gesamtabnahme angezeigt. Diese Änderungen sind nur für die persönliche Home-Assistant-Nutzung gedacht.
+
 [![Home Assistant](https://img.shields.io/badge/home%20assistant-%2341BDF5.svg?style=for-the-badge&logo=home-assistant&logoColor=white)](https://home-assistant.io)
 [![hacs](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/default)
 [![License][license-shield]](LICENSE.md)
@@ -13,10 +15,10 @@
 
 ## About
 
-This Lovelace custom card for Home Assistant provides clear insights into sensor trends by computing and displaying net
-change, upward shifts and downward shifts over your chosen interval. Whether you're tracking energy usage, temperature
-drift or other metrics, the card puts the story front and centre. Easy to install and configure via HACS or manual
-installation—just add your sensor and start visualising.
+This Lovelace custom card for Home Assistant provides clear insights into sensor trends by displaying upward shifts and
+downward shifts over your chosen interval. Whether you're tracking energy usage, temperature drift or other metrics,
+the card puts the story front and centre. Easy to install and configure via HACS or manual installation—just add your
+sensor and start visualising.
 
 ![assets/ss.png](assets/ss.png)
 
@@ -90,15 +92,15 @@ Configurable css variables:
 
 --trend-border-color: var(--divider-color, #e0e0e0);
 
---trend-increase: #10b981;
---trend-increase-light: #34d399;
---trend-increase-secondary: #6ee7b7;
---trend-increase-shadow: rgba(16, 185, 129, 0.15);
+--trend-increase: #ef4444;
+--trend-increase-light: #f87171;
+--trend-increase-secondary: #fca5a5;
+--trend-increase-shadow: rgba(239, 68, 68, 0.15);
 
---trend-decrease: #ef4444;
---trend-decrease-light: #f87171;
---trend-decrease-secondary: #fca5a5;
---trend-decrease-shadow: rgba(239, 68, 68, 0.15);
+--trend-decrease: #10b981;
+--trend-decrease-light: #34d399;
+--trend-decrease-secondary: #6ee7b7;
+--trend-decrease-shadow: rgba(16, 185, 129, 0.15);
 
 --trend-neutral: #94a3b8;
 ```

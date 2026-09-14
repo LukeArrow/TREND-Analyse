@@ -12,15 +12,15 @@
 
     --trend-border-color: var(--divider-color, #e0e0e0);
 
-    --trend-increase: #10b981;
-    --trend-increase-light: #34d399;
-    --trend-increase-secondary: #6ee7b7;
-    --trend-increase-shadow: rgba(16, 185, 129, 0.15);
+    --trend-increase: #ef4444;
+    --trend-increase-light: #f87171;
+    --trend-increase-secondary: #fca5a5;
+    --trend-increase-shadow: rgba(239, 68, 68, 0.15);
 
-    --trend-decrease: #ef4444;
-    --trend-decrease-light: #f87171;
-    --trend-decrease-secondary: #fca5a5;
-    --trend-decrease-shadow: rgba(239, 68, 68, 0.15);
+    --trend-decrease: #10b981;
+    --trend-decrease-light: #34d399;
+    --trend-decrease-secondary: #6ee7b7;
+    --trend-decrease-shadow: rgba(16, 185, 129, 0.15);
 
     --trend-neutral: #94a3b8;
 }
@@ -138,31 +138,6 @@
 
 .card-content {
     padding: 24px;
-}
-
-.net-change {
-    text-align: center;
-    margin-bottom: 12px;
-    padding: 20px;
-    background: var(--trend-surface);
-    border-radius: 16px;
-    border: 1px solid var(--trend-border-color);
-}
-
-.net-change:hover {
-    transform: translateY(-1px);
-}
-
-.net-change.up:hover {
-    border-color: color-mix(in srgb, var(--trend-increase) 50%, transparent);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--trend-increase) 20%, transparent) 0%, color-mix(in srgb, var(--trend-increase-secondary) 10%, transparent) 100%);
-    box-shadow: 0 4px 12px var(--trend-increase-light);
-}
-
-.net-change.down:hover {
-    border-color: color-mix(in srgb, var(--trend-decrease) 50%, transparent);
-    background: linear-gradient(135deg, color-mix(in srgb, var(--trend-decrease) 20%, transparent) 0%, color-mix(in srgb, var(--trend-decrease-secondary) 10%, transparent) 100%);
-    box-shadow: 0 4px 12px var(--trend-decrease-light);
 }
 
 .trend-indicator {
