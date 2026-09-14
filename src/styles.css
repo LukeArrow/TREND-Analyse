@@ -140,142 +140,104 @@
     padding: 24px;
 }
 
-.stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+.net-change {
+    text-align: center;
     margin-bottom: 12px;
-}
-
-.stat-card {
-    padding: 16px;
+    padding: 20px;
+    background: var(--trend-surface);
     border-radius: 16px;
     border: 1px solid var(--trend-border-color);
     transition: all 0.2s;
 }
 
-.stat-card:hover {
-    transform: translateY(-2px);
+.net-change:hover {
+    transform: translateY(-1px);
 }
 
-.stat-card.increase {
-    background: linear-gradient(135deg, color-mix(in srgb, var(--trend-increase-light) 20%, transparent) 0%, transparent 100%);
-    border-color: color-mix(in srgb, var(--trend-increase-light) 40%, transparent);
-}
-
-.stat-card.increase:hover {
+.net-change.up:hover {
     border-color: color-mix(in srgb, var(--trend-increase) 50%, transparent);
     background: linear-gradient(135deg, color-mix(in srgb, var(--trend-increase) 20%, transparent) 0%, color-mix(in srgb, var(--trend-increase-secondary) 10%, transparent) 100%);
     box-shadow: 0 4px 12px var(--trend-increase-light);
 }
 
-.stat-card.decrease {
-    background: linear-gradient(135deg, color-mix(in srgb, var(--trend-decrease-light) 20%, transparent) 0%, transparent 100%);
-    border-color: color-mix(in srgb, var(--trend-decrease-light) 40%, transparent);
-}
-
-.stat-card.decrease:hover {
+.net-change.down:hover {
     border-color: color-mix(in srgb, var(--trend-decrease) 50%, transparent);
     background: linear-gradient(135deg, color-mix(in srgb, var(--trend-decrease) 20%, transparent) 0%, color-mix(in srgb, var(--trend-decrease-secondary) 10%, transparent) 100%);
     box-shadow: 0 4px 12px var(--trend-decrease-light);
 }
 
-.stat-header {
-    display: flex;
+.trend-indicator {
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 12px;
 }
 
-.stat-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.trend-indicator ha-icon {
+    --mdc-icon-size: 24px;
 }
 
-.stat-icon.increase {
-    background: color-mix(in srgb, var(--trend-increase-light) 20%, transparent);
-}
-
-.stat-icon.decrease {
-    background: color-mix(in srgb, var(--trend-decrease-light) 20%, transparent);
-}
-
-.stat-icon ha-icon {
-    --mdc-icon-size: 16px;
-}
-
-.stat-icon.increase ha-icon,
-.stat-label.increase {
+.trend-indicator.up ha-icon,
+.trend-label.up,
+.main-value.up {
     color: var(--trend-increase-light);
 }
 
-.stat-icon.decrease ha-icon,
-.stat-label.decrease {
+.trend-indicator.down ha-icon,
+.trend-label.down,
+.main-value.down {
     color: var(--trend-decrease-light);
 }
 
-.stat-label {
-    font-size: 12px;
+.trend-indicator.neutral ha-icon,
+.trend-label.neutral,
+.main-value.neutral {
+    color: var(--trend-neutral);
+}
+
+.trend-label {
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.05em;
 }
 
-.stat-value-container {
+.value-container {
     display: flex;
     align-items: baseline;
-    gap: 6px;
-    margin-bottom: 8px;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 4px;
 }
 
-.stat-value {
+.main-value {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.unit {
+    font-size: 20px;
+    color: var(--trend-text-primary);
+    font-weight: 500;
+}
+
+.percentage {
     font-size: 28px;
     font-weight: 700;
-    color: var(--trend-text-secondary);
     font-variant-numeric: tabular-nums;
 }
 
-.stat-unit {
-    font-size: 14px;
-    color: var(--trend-text-primary);
-}
-
-.stat-percentage {
-    font-size: 20px;
-    font-weight: 700;
-    font-variant-numeric: tabular-nums;
-}
-
-.stat-card.increase .stat-percentage {
+.percentage.up {
     color: var(--trend-increase-light);
 }
 
-.stat-card.decrease .stat-percentage {
+.percentage.down {
     color: var(--trend-decrease-light);
 }
 
-.progress-bar {
-    height: 4px;
-    background: var(--trend-border-color);
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    height: 100%;
-    border-radius: 2px;
-    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.progress-fill.increase {
-    background: linear-gradient(90deg, var(--trend-increase) 0%, var(--trend-increase-secondary) 100%);
-}
-
-.progress-fill.decrease {
-    background: linear-gradient(90deg, var(--trend-decrease) 0%, var(--trend-decrease-secondary) 100%);
+.percentage.neutral {
+    color: var(--trend-neutral);
 }
 
 .preset-buttons {
@@ -564,20 +526,16 @@
         font-size: 18px;
     }
 
-    .stats-grid {
-        gap: 12px;
+    .main-value {
+        font-size: 48px;
     }
 
-    .stat-card {
-        padding: 12px;
+    .unit {
+        font-size: 18px;
     }
 
-    .stat-value {
-        font-size: 24px;
-    }
-
-    .stat-percentage {
-        font-size: 16px;
+    .percentage {
+        font-size: 28px;
     }
 
     .preset-buttons {
