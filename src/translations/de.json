@@ -13,9 +13,7 @@
     "end": "ENDE",
     "increase": "ANSTIEG",
     "decrease": "RÜCKGANG",
-    "total_increase": "GESAMTZUNAHME",
-    "total_decrease": "GESAMTABNAHME",
-    "delta": "NETTO-ÄNDERUNG",
+    "delta": "ÄNDERUNG",
     "graph_title": "TRENDGRAFIK"
   },
   "error": {

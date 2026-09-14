@@ -13,9 +13,7 @@
     "end": "FINE",
     "increase": "AUMENTO",
     "decrease": "DIMINUZIONE",
-    "total_increase": "AUMENTO TOTALE",
-    "total_decrease": "DIMINUZIONE TOTALE",
-    "delta": "VARIAZIONE NETTA",
+    "delta": "VARIAZIONE",
     "graph_title": "GRAFICO DEL TREND"
   },
   "error": {
