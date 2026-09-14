@@ -317,39 +317,11 @@ export class TrendAnalysisCard extends LitElement {
         const percentageOnly = this._config.percentageOnly === true;
 
         const data = this._result;
-        const increasePercent = (data.increase / (data.increase + data.decrease)) * 100;
-        const decreasePercent = (data.decrease / (data.increase + data.decrease)) * 100;
+        const totalChanges = data.increase + data.decrease;
+        const increasePercent = totalChanges === 0 ? 0 : (data.increase / totalChanges) * 100;
+        const decreasePercent = totalChanges === 0 ? 0 : 100 - increasePercent;
 
         return html`
-            <div class="net-change ${data.trend}">
-                <div class="trend-indicator ${data.trend}">
-                    <span class="trend-label">
-                        ${localize('common.delta')}
-                    </span>
-                    ${data.trend === 'up' ? html`
-                        <ha-icon icon="mdi:trending-up"></ha-icon>
-                        <span class="trend-label ${data.trend}">
-                            ${localize('common.increase')}
-                        </span>
-                    ` : data.trend === 'down' ? html`
-                        <ha-icon icon="mdi:trending-down"></ha-icon>
-                        <span class="trend-label ${data.trend}">
-                            ${localize('common.decrease')}
-                        </span>
-                    ` : nothing
-                    }
-                </div>
-                <div class="value-container">
-                    ${!percentageOnly ? html`
-                        <span class="main-value ${data.trend}">${data.delta.toFixed(2)}</span>
-                        <span class="unit">${unit}</span>
-                    ` : nothing}
-                    ${showPercentage ? html`
-                        <span class="percentage ${data.trend}">${data.deltaPercent !== undefined ? data.deltaPercent.toFixed(1) : '0.0'}%</span>
-                    ` : nothing}
-                </div>
-            </div>
-
             <div class="stats-grid">
                 <div class="stat-card increase">
                     <div class="stat-header">
