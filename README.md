@@ -1,17 +1,17 @@
 # Trend Analysis Card for Home Assistant
 
-> **Note:** This is a personal **fork** of the original repository [Riscue/trend-analysis-card](https://github.com/Riscue/trend-analysis-card). This fork removes the net change total, swaps the trend colors to **decreasing = green** and **increasing = red**, and only shows total increase and total decrease. These changes are intended only for personal Home Assistant use.
+> **Note:** [LukeArrow/TREND-Analyse](https://github.com/LukeArrow/TREND-Analyse) is a personal **fork** of the original repository [Riscue/trend-analysis-card](https://github.com/Riscue/trend-analysis-card). This fork removes the net change total, swaps the trend colors to **decreasing = green** and **increasing = red**, and only shows total increase and total decrease.
 
 [![Home Assistant](https://img.shields.io/badge/home%20assistant-%2341BDF5.svg?style=for-the-badge&logo=home-assistant&logoColor=white)](https://home-assistant.io)
 [![hacs](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/default)
 [![License][license-shield]](LICENSE.md)
 
-[license-shield]: https://img.shields.io/github/license/Riscue/trend-analysis-card.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/LukeArrow/TREND-Analyse.svg?style=for-the-badge
 
-[![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/Riscue/trend-analysis-card/latest/total?label=downloads&style=for-the-badge)](https://github.com/Riscue/trend-analysis-card/releases)
+[![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/LukeArrow/TREND-Analyse/latest/total?label=downloads&style=for-the-badge)](https://github.com/LukeArrow/TREND-Analyse/releases)
 
-[![GitHub Release](https://img.shields.io/github/release/Riscue/trend-analysis-card.svg?style=for-the-badge)](https://github.com/Riscue/trend-analysis-card/releases)
-[![GitHub Activity](https://img.shields.io/github/commit-activity/y/Riscue/trend-analysis-card.svg?style=for-the-badge)](https://github.com/Riscue/trend-analysis-card/commits/master)
+[![GitHub Release](https://img.shields.io/github/release/LukeArrow/TREND-Analyse.svg?style=for-the-badge)](https://github.com/LukeArrow/TREND-Analyse/releases)
+[![GitHub Activity](https://img.shields.io/github/commit-activity/y/LukeArrow/TREND-Analyse.svg?style=for-the-badge)](https://github.com/LukeArrow/TREND-Analyse/commits/master)
 
 ## About
 
@@ -26,12 +26,22 @@ sensor and start visualising.
 
 ### HACS Installation (Recommended)
 
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Riscue&repository=trend-analysis-card)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=LukeArrow&repository=TREND-Analyse&category=plugin)
+
+1. In HACS, add `https://github.com/LukeArrow/TREND-Analyse` as a custom repository.
+2. Select the **Frontend** category for the repository.
+3. Install **Trend Analysis Card**.
+4. If Home Assistant does not add the resource automatically, add:
+
+    ```yaml
+    url: /hacsfiles/trend-analysis-card.js
+    type: module
+    ```
 
 ### Manual Installation
 
 1. Download `trend-analysis-card.js` file
-   from [Latest Release](https://github.com/Riscue/trend-analysis-card/releases/latest) into your Home Assistant `www`
+   from the [latest release](https://github.com/LukeArrow/TREND-Analyse/releases/latest) into your Home Assistant `www`
    directory.
 2. Add the card as a Lovelace resource:
 
@@ -41,6 +51,15 @@ sensor and start visualising.
     ```
 
 3. Add the configuration below to your dashboard or view.
+
+### Build from Source
+
+If you are installing from a local checkout instead of a GitHub release, build the card first and then copy `dist/trend-analysis-card.js` into your Home Assistant `www` directory:
+
+```bash
+npm install
+npm run build
+```
 
 ---
 
