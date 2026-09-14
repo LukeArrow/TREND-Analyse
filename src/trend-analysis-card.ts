@@ -317,52 +317,28 @@ export class TrendAnalysisCard extends LitElement {
         const percentageOnly = this._config.percentageOnly === true;
 
         const data = this._result;
-        const totalChanges = data.increase + data.decrease;
-        const increasePercent = totalChanges === 0 ? 0 : (data.increase / totalChanges) * 100;
-        const decreasePercent = totalChanges === 0 ? 0 : 100 - increasePercent;
+        const trend = data.trend;
+        const trendLabel = trend === 'down' ? localize('common.decrease') : trend === 'up' ? localize('common.increase') : '';
+        const trendIcon = trend === 'down' ? 'mdi:trending-down' : trend === 'up' ? 'mdi:trending-up' : 'mdi:trending-neutral';
+        const sign = data.delta > 0 ? '+' : '';
 
         return html`
-            <div class="stats-grid">
-                <div class="stat-card increase">
-                    <div class="stat-header">
-                        <div class="stat-icon increase">
-                            <ha-icon icon="mdi:trending-up"></ha-icon>
-                        </div>
-                        <span class="stat-label increase">${localize('common.total_increase')}</span>
-                    </div>
-                    <div class="stat-value-container">
-                        ${!percentageOnly ? html`
-                            <span class="stat-value">${data.increase.toFixed(2)}</span>
-                            <span class="stat-unit">${unit}</span>
-                        ` : nothing}
-                        ${showPercentage ? html`
-                            <span class="stat-percentage">+${data.increasePercent !== undefined ? data.increasePercent.toFixed(1) : '0.0'}%</span>
-                        ` : nothing}
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill increase" style="width: calc(${increasePercent.toFixed(0)}%)"></div>
-                    </div>
+            <div class="net-change-card ${trend}">
+                <div class="net-change-header">
+                    <span class="net-change-label">${localize('common.delta')}</span>
+                    <span class="net-change-trend ${trend}">
+                        <ha-icon icon="${trendIcon}"></ha-icon>
+                        ${trendLabel}
+                    </span>
                 </div>
-
-                <div class="stat-card decrease">
-                    <div class="stat-header">
-                        <div class="stat-icon decrease">
-                            <ha-icon icon="mdi:trending-down"></ha-icon>
-                        </div>
-                        <span class="stat-label decrease">${localize('common.total_decrease')}</span>
-                    </div>
-                    <div class="stat-value-container">
-                        ${!percentageOnly ? html`
-                            <span class="stat-value">${data.decrease.toFixed(2)}</span>
-                            <span class="stat-unit">${unit}</span>
-                        ` : nothing}
-                        ${showPercentage ? html`
-                            <span class="stat-percentage">-${data.decreasePercent !== undefined ? data.decreasePercent.toFixed(1) : '0.0'}%</span>
-                        ` : nothing}
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill decrease" style="width: calc(${decreasePercent.toFixed(0)}%)"></div>
-                    </div>
+                <div class="net-change-value-container">
+                    ${!percentageOnly ? html`
+                        <span class="net-change-value ${trend}">${sign}${data.delta.toFixed(2)}</span>
+                        <span class="net-change-unit">${unit}</span>
+                    ` : nothing}
+                    ${showPercentage ? html`
+                        <span class="net-change-percentage ${trend}">${data.deltaPercent !== undefined ? (data.deltaPercent > 0 ? '+' : '') + data.deltaPercent.toFixed(1) : '0.0'}%</span>
+                    ` : nothing}
                 </div>
             </div>
         `;
