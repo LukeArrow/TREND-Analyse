@@ -317,8 +317,8 @@ export class TrendAnalysisCard extends LitElement {
         const percentageOnly = this._config.percentageOnly === true;
 
         const data = this._result;
-        const increasePercent = (data.increase / (data.increase + data.decrease)) * 100;
-        const decreasePercent = (data.decrease / (data.increase + data.decrease)) * 100;
+        const totalChanges = data.increase + data.decrease;
+        const increasePercent = (data.increase / totalChanges) * 100;
 
         return html`
             <div class="stats-grid">
@@ -360,7 +360,7 @@ export class TrendAnalysisCard extends LitElement {
                         ` : nothing}
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill decrease" style="width: calc(${decreasePercent.toFixed(0)}%)"></div>
+                        <div class="progress-fill decrease" style="width: calc(${(100 - increasePercent).toFixed(0)}%)"></div>
                     </div>
                 </div>
             </div>

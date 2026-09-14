@@ -1,6 +1,6 @@
 # Trend Analysis Card for Home Assistant
 
-> **Hinweis:** Dies ist ein persönlicher **Fork** des Original-Repositories [Riscue/trend-analysis-card](https://github.com/Riscue/trend-analysis-card). In diesem Fork wurde die Netto-Änderungs-Summe entfernt, die Trendfarben wurden auf **fallend = grün** und **steigend = rot** getauscht, und es werden nur noch Gesamtzunahme und Gesamtabnahme angezeigt. Diese Änderungen sind nur für die persönliche Home-Assistant-Nutzung gedacht.
+> **Note:** This is a personal **fork** of the original repository [Riscue/trend-analysis-card](https://github.com/Riscue/trend-analysis-card). This fork removes the net change total, swaps the trend colors to **decreasing = green** and **increasing = red**, and only shows total increase and total decrease. These changes are intended only for personal Home Assistant use.
 
 [![Home Assistant](https://img.shields.io/badge/home%20assistant-%2341BDF5.svg?style=for-the-badge&logo=home-assistant&logoColor=white)](https://home-assistant.io)
 [![hacs](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/default)
