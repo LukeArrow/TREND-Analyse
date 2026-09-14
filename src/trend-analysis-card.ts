@@ -337,8 +337,8 @@ export class TrendAnalysisCard extends LitElement {
                         <span class="main-value ${data.trend}">${deltaValue}</span>
                         <span class="unit">${unit}</span>
                     ` : nothing}
-                    ${showPercentage ? html`
-                        <span class="percentage ${data.trend}">${data.deltaPercent !== undefined ? `${data.deltaPercent > 0 ? '+' : ''}${data.deltaPercent.toFixed(1)}%` : ''}</span>
+                    ${showPercentage && data.deltaPercent !== undefined ? html`
+                        <span class="percentage ${data.trend}">${data.deltaPercent > 0 ? '+' : ''}${data.deltaPercent.toFixed(1)}%</span>
                     ` : nothing}
                 </div>
             </div>
