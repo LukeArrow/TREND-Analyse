@@ -52,6 +52,8 @@ sensor and start visualising.
 
 3. Add the configuration below to your dashboard or view.
 
+---
+
 ### Build from Source
 
 If you are installing from a local checkout instead of a GitHub release, build the card first and then copy `dist/trend-analysis-card.js` into your Home Assistant `www` directory:
