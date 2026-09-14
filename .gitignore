@@ -2,7 +2,8 @@
 
 # compiled output
 target/
-dist/
+dist/*
+!dist/trend-analysis-card.js
 build/
 tmp/
 out-tsc/

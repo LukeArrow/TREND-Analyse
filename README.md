@@ -34,13 +34,13 @@ sensor and start visualising.
 4. If Home Assistant does not add the resource automatically, add:
 
     ```yaml
-    url: /hacsfiles/trend-analysis-card.js
+    url: /hacsfiles/TREND-Analyse/trend-analysis-card.js
     type: module
     ```
 
 ### Manual Installation
 
-1. Download `trend-analysis-card.js` file
+1. Download the `trend-analysis-card.js` release asset
    from the [latest release](https://github.com/LukeArrow/TREND-Analyse/releases/latest) into your Home Assistant `www`
    directory.
 2. Add the card as a Lovelace resource:
