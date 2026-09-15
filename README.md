@@ -1,6 +1,6 @@
 # Trend Analysis Card for Home Assistant
 
-> **Note:** [LukeArrow/TREND-Analyse](https://github.com/LukeArrow/TREND-Analyse) is a personal **fork** of the original repository [Riscue/trend-analysis-card](https://github.com/Riscue/trend-analysis-card). This fork keeps a single overall **Change** summary card (without separate total increase/decrease stat cards) and swaps the trend colors to **decreasing = green** and **increasing = red**.
+> **Note:** [LukeArrow/TREND-Analyse](https://github.com/LukeArrow/TREND-Analyse) is a personal **fork** of the original repository [Riscue/trend-analysis-card](https://github.com/Riscue/trend-analysis-card). This fork keeps a single overall **Change** summary card (without separate total increase/decrease stat cards)
 
 [![Home Assistant](https://img.shields.io/badge/home%20assistant-%2341BDF5.svg?style=for-the-badge&logo=home-assistant&logoColor=white)](https://home-assistant.io)
 [![hacs](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/hacs/default)
